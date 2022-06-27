@@ -241,7 +241,7 @@ def vinyl_rotationspeed() :
     return jsonify(dict_to_send) 
 
 #Endpoint to modify the year of release of the Vinyl that is recognized by the title. It returns a corresponding message
-@app.route("/vinyl/modify/<title>/<year>/",methods=["POST"])
+@app.route("/vinyl/modify/<title>/<year>/",methods=["PATCH"])
 def vinyl_modify_year(title, year): 
     all_vinyl = get_all_vinyl() 
     x = False  

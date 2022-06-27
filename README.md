@@ -44,3 +44,7 @@ o http://localhost:5000/cd/duration_40  ->  Get the CDs with a duration up to 40
 o http://localhost:5000/vinyl/rotation_speed_45  ->  Get the Vinyls that have a rotation speed of 45 rpm 
 
 o http://localhost:5000/vinyl/modify/< title >/< year >  ->  Modify a Vinyl’s Year of release (eg http://localhost:5000/vinyl/modify/The Wall/1990 )
+
+
+
+Requests can be done in any way, but if you don't know I suggest Postman. 

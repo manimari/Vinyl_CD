@@ -1,0 +1,56 @@
+We use the framework Flask for the development of the web application. 
+We also use the sqlite3 module to interact with the database. 
+
+First we set as global variables the file of the database, where we use os. 
+In Windows we have \\ . In other systems (eg. ios, android linux) we have / . 
+
+The function check_file_existence(file_link) which gets as input the path of the file and it returns True or False, it depends on whether the input file already exists or not. 
+
+The function create_db() creates the database with the three Tables - CD, Vinyl, User. Here we have a try block to test if there is an error at the queries. If so, then we hve the except block which give us the message that there is an error. 
+The try-except is in every function that handles with queries. 
+
+The function get_all_cd() returns all the data of the Table CD. This is done with the SQL command Select. 
+
+The function get_all_vinyl() is the corresponding function for the vinyls, i.e. it returns all the data of the Table Vinyl. 
+
+The function get_all_user() is the corresponding function for the vinyls, i.e. it returns all the data of the Table User. 
+
+The function insert_one_cd(title, duration, year_release, price) adds the data of a new CD into the Table CD. 
+The data of the new CD is in the input of the function, i.e. we have the string title, the real number duration, the integer year of release and the real price. 
+This function doesn't return anything. It just add with the SQL command Insert the new element into the Table. 
+
+The function insert_one_vinyl(title, duration, rotation_speed, year_release, price) is the corresponding function for the vinyls, i.e. it adds the data of a new vinyl into the Table Vinyl. 
+The data of the new vinyl is in the input of the function, i.e. we have the string title, the real number duration, the real number rotation speed, the integer year of release and the real price. 
+This function doesn't return anything. It just add with the SQL command Insert the new element into the Table. 
+
+The function insert_one_user(name, surname, email, physical_address) is the corresponding function for the userss, i.e. it adds the data of a new user into the Table User. 
+The data of the new user is in the input of the function, i.e. we have the strings name, surname, email and physical adress. 
+This function doesn't return anything. It just add with the SQL command Insert the new element into the Table. 
+
+The function get_cd_duration40() returns the data of the CDs of the table CD with the constraint that the duration is less or equal to 40. This is done with the SQL command Select ... where. 
+
+The function get_vinyl_rotationspeed45() returns the data of the Vinyls of the table Vinyl with the constraint that the rotation speed is equal to 45. This is done with the SQL command Select ... where. 
+
+The function modify_vinyl_year_release(title, year) updates the element year_release of the table Vinyl with the value year that is given as the second input and the vinyl of which the year is updated has the title title, which is given as the first input. 
+
+We call the check_file_existence function. Since the database is created once, we check if it already exists, if not then we create it. 
+
+We initialize the server and we create the endpoints. 
+
+The GET endpoint /cd/get_all/ returns the data of all the CDs of the database and a corresponding message. 
+
+The GET endpoint /vinyl/get_all/ returns the data of all the Vinyls of the database and a corresponding message. 
+
+The GET endpoint /user/get_all/ returns the data of all the Users of the database and a corresponding message. 
+
+The POST endpoint /cd/add/ adds a new CD into the database, by calling the corresponding function where the inputs are given by request.get_json() which converts the JSON objects into Python data. It returns a corresponding message. 
+
+The POST endpoint /vinyl/add/ adds a new vinyl into the database, by calling the corresponding function where the inputs are given by request.get_json() which converts the JSON objects into Python data. It returns a corresponding message. Before the data is added into the database we check of the given rotation speed satisfy the restriction, i.e. that it is equal to one of the three possible values. If not, a message error is returned. If the rotation speed is accepted then we continue by calling the corresponding function to add the new vinyl into the database. 
+
+The POST endpoint /user/add/ adds a new user into the database, by calling the corresponding function where the inputs are given by request.get_json() which converts the JSON objects into Python data. It returns a corresponding message. 
+
+The GET endpoint /cd/duration_40/ returns all the CDs with a duration up to 40 Minutes. It returns the data of the CDs, that satisfy the constraint, and a corresponding message. 
+
+The GET endpoint /vinyl/rotation_speed_45/ returns all the Vinyls with a rotation speed of 45 rpm. It returns the data of the Vinyls, that satisfy the constraint, and a corresponding message. 
+
+The POST endpoint /vinyl/modify/<title>/<year>/ modifies the year of release of the Vinyl that is recognized by the title that is given as input, as well as the new year of release. It returns a corresponding message. First we look at all the Vinyls and check if the title that is given by the user equals to one of the title of the Vinyls of the DB, i.e. we check if the given title of vinyl exists in the database. If the title doesn't exist then an error message is returned. If the title exists, we modify the year by calling the corresponding function and a corresponding message is then retuned. 

@@ -7,7 +7,7 @@ current_working_directory=os.getcwd()+"\\" #In Windows we have \\ . In other sys
 database_file_name=current_working_directory+"data\\vinyl_cd_store.db"  
 
 def check_file_existence(file_link) : 
-    return os.path.isfile(file_link)#epistrefei true or false 
+    return os.path.isfile(file_link) #It returns true or false 
 
 #Function to create the database with the three Tables - CD, Vinyl, User 
 def create_db() : 
@@ -240,7 +240,7 @@ def vinyl_rotationspeed() :
     dict_to_send["message"]='These are all the Vinyls of the database that have a rotation speed of 45 rpm.'
     return jsonify(dict_to_send) 
 
-#Endpoint to modify the year of release of the Vinyl that is recognized by the title. It returns the data of the CDs, that satisfy the constraint, and a corresponding message
+#Endpoint to modify the year of release of the Vinyl that is recognized by the title. It returns a corresponding message
 @app.route("/vinyl/modify/<title>/<year>/",methods=["POST"])
 def vinyl_modify_year(title, year): 
     all_vinyl = get_all_vinyl() 

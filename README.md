@@ -25,12 +25,21 @@ o Table User :
 
 
 We have an API that provides the following endpoints : 
-o http://localhost:5000/cd/get_all  ->  Get every CD from the database
-o http://localhost:5000/vinyl/get_all  ->  Get every Vinyl from the database
-o http://localhost:5000/user/get_all  ->  Get every User from the database
-o http://localhost:5000/cd/add  ->  Add a new CD listing
+
+o http://localhost:5000/cd/get_all  ->  Get every CD from the database 
+
+o http://localhost:5000/vinyl/get_all  ->  Get every Vinyl from the database 
+
+o http://localhost:5000/user/get_all  ->  Get every User from the database 
+
+o http://localhost:5000/cd/add  ->  Add a new CD listing 
+
 o http://localhost:5000/vinyl/add  ->  Add a new Vinyl listing 
-o http://localhost:5000/user/add  ->  Add a new User
-o http://localhost:5000/cd/duration_40  ->  Get the CDs with a duration up to 40 minutes
-o http://localhost:5000/vinyl/rotation_speed_45  ->  Get the Vinyls that have a rotation speed of 45 rpm
+
+o http://localhost:5000/user/add  ->  Add a new User 
+
+o http://localhost:5000/cd/duration_40  ->  Get the CDs with a duration up to 40 minutes 
+
+o http://localhost:5000/vinyl/rotation_speed_45  ->  Get the Vinyls that have a rotation speed of 45 rpm 
+
 o http://localhost:5000/vinyl/modify/<title>/<year>  ->  Modify a Vinyl’s Year of release (eg http://localhost:5000/vinyl/modify/The Wall/1990 )

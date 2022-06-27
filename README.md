@@ -24,6 +24,7 @@ o Table User :
 ▪ Physical Address
 
 
+
 We have an API that provides the following endpoints : 
 
 o http://localhost:5000/cd/get_all  ->  Get every CD from the database 
@@ -42,4 +43,4 @@ o http://localhost:5000/cd/duration_40  ->  Get the CDs with a duration up to 40
 
 o http://localhost:5000/vinyl/rotation_speed_45  ->  Get the Vinyls that have a rotation speed of 45 rpm 
 
-o http://localhost:5000/vinyl/modify/<title>/<year>  ->  Modify a Vinyl’s Year of release (eg http://localhost:5000/vinyl/modify/The Wall/1990 )
+o http://localhost:5000/vinyl/modify/< title >/< year >  ->  Modify a Vinyl’s Year of release (eg http://localhost:5000/vinyl/modify/The Wall/1990 )

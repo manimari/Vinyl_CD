@@ -4,24 +4,24 @@ API for CD and Vinyl
 We have a database that contains the listed items of a Vinyl and CD store: 
 
 o Table CD : 
-▪ Title
-▪ Duration
-▪ Year of release
-▪ Price 
+▪ Title - string 
+▪ Duration - real number 
+▪ Year of release - integer number 
+▪ Price - real number 
 
 o Table Vinyl : 
-▪ Title
-▪ Duration
+▪ Title - string 
+▪ Duration - real number 
 ▪ Rotation Speed (Three possible values: 33.3, 45, 78 rpm - revolutions per 
-minute)
-▪ Year of release
-▪ Price 
+minute) - real number 
+▪ Year of release - integer number 
+▪ Price - real number 
 
 o Table User : 
-▪ Name
-▪ Surname
-▪ Email
-▪ Physical Address
+▪ Name - string 
+▪ Surname - string 
+▪ Email - string 
+▪ Physical Address - string 
 
 
 
